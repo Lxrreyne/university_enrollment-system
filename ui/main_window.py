@@ -2,6 +2,7 @@ import tkinter as tk
 
 from .components.header import Header
 from .components.sidebar import Sidebar
+from .pages.dashboard import Dashboard
 
 class MainWindow:
 
@@ -62,31 +63,5 @@ class MainWindow:
         for widget in self.page_container.winfo_children():
             widget.destroy()
 
-        # Page title
-        title = tk.Label(
-            self.page_container,
-            text=page_name,
-            font=("Arial", 23, "bold"),
-            fg="#07549C",
-            bg="#F1F3F5"
-        )
-
-        title.pack(
-            anchor="w",
-            padx=30,
-            pady=(30, 5)
-        )
-
-        # Temporary description
-        description = tk.Label(
-            self.page_container,
-            text=f"{page_name} page will be displayed here.",
-            font=("Arial", 10),
-            fg="#555555",
-            bg="#F1F3F5"
-        )
-
-        description.pack(
-            anchor="w",
-            padx=30
-        )
+        if page_name == "Dashboard":
+            Dashboard(self.page_container)
