@@ -77,6 +77,7 @@ class Dashboard:
         )
 
         self.create_capacity_section()
+        self.create_course_list()
 
     def create_header(self):
         title = tk.Label(
@@ -130,3 +131,62 @@ class Dashboard:
         )
 
         title.pack(anchor="w", padx=20, pady=15)
+
+
+
+    def create_course_list(self):
+
+        self.course_list_frame = tk.Frame(
+            self.capacity_frame,
+            bg="#FFFFFF"
+        )
+
+        self.course_list_frame.pack(
+            fill="x",
+            padx=10,
+            pady=(0, 10)
+        )
+        # temporary records, for visualizing what itll look like
+        courses = [
+            ("CS102", "Data Structures", "28/30"),
+            ("CS201", "Object-Oriented Programming", "25/30"),
+            ("CS301", "Database Management", "29/30")
+        ]
+
+        headers = ["Course Code", "Course Name", "Enrollment"]
+
+        for column, header in enumerate(headers):
+            label = tk.Label(
+                self.course_list_frame,
+                text=header,
+                font=("Arial", 10, "bold"),
+                bg="#E8EDF2",
+                fg="#333333",
+                anchor="w",
+                padx=10,
+                pady=10
+            )
+
+            label.grid(row=1, column=column, sticky="ew")
+
+        for row, course in enumerate(courses, start=2):
+
+            for column, value in enumerate(course):
+                label = tk.Label(
+                    self.course_list_frame,
+                    text=value,
+                    font=("Arial", 10),
+                    bg="#FFFFFF",
+                    fg="#333333",
+                    anchor="w",
+                    padx=10,
+                    pady=12
+                )
+
+                label.grid(row=row, column=column, sticky="ew")
+
+        for column in range(3):
+            self.course_list_frame.grid_columnconfigure(
+                column,
+                weight=1
+            )
