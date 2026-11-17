@@ -1,4 +1,5 @@
 BUBBLE SORT BY NAME
+
     START
     INPUT list of records
     MAKE a copy of the list
@@ -15,6 +16,7 @@ BUBBLE SORT BY NAME
     END
  
 BUBBLE SORT COURSES BY CAPACITY
+
     START
     INPUT list of courses (each course is a code with its information)
     MAKE a copy of the list
