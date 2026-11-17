@@ -1,4 +1,5 @@
 LINEAR SEARCH BY NAME
+
     START
     INPUT list of records, name to find
     FOR each record in the list
@@ -10,6 +11,7 @@ LINEAR SEARCH BY NAME
     END
  
 LINEAR SEARCH BY ID
+
     START
     INPUT records stored by ID, ID to find
     LOOK UP the ID in the records
@@ -17,6 +19,7 @@ LINEAR SEARCH BY ID
     END
  
 SEARCH COURSES BY KEYWORD
+
     START
     INPUT courses stored by course code, keyword
     CREATE an empty list of results
