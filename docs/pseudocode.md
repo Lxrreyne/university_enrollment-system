@@ -127,3 +127,52 @@ BUILD PREREQUISITE GRAPH
     END FOR
     RETURN the graph
     END
+
+======================================================================
+DEPTH-FIRST SEARCH (dfs.py)
+======================================================================
+ 
+DFS
+    START
+    INPUT graph, starting course
+    CREATE an empty list of visited courses
+    PUT the starting course on the stack
+    WHILE the stack is not empty
+        TAKE the top course off the stack
+        IF the course has not been visited THEN
+            ADD it to the visited list
+            FOR each next course of this course
+                IF the next course has not been visited THEN
+                    PUT it on the stack
+                END IF
+            END FOR
+        END IF
+    END WHILE
+    RETURN the visited list
+    END
+
+======================================================================
+TOPOLOGICAL SORT (topological_sort.py) - depth-first version
+======================================================================
+ 
+TOPOLOGICAL SORT
+    START
+    INPUT graph
+    CREATE an empty visited list
+    CREATE an empty result list
+    FOR each course in the graph
+        VISIT the course
+    END FOR
+    RETURN the result list
+    END
+ 
+VISIT a course
+    IF the course is already visited THEN
+        STOP
+    END IF
+    ADD the course to the visited list
+    FOR each next course of this course (none if it has no entry)
+        VISIT the next course
+    END FOR
+    PLACE the course at the FRONT of the result list
+    END
