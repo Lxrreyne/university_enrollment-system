@@ -1,4 +1,5 @@
 BFS
+
     START
     INPUT graph, starting course
     CREATE a visited list containing the starting course
@@ -16,6 +17,7 @@ BFS
     END
  
 BFS LEVELS
+
     START
     INPUT graph, starting course
     SET the starting course's level to 0
